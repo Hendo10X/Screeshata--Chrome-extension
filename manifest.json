@@ -1,0 +1,16 @@
+{
+    "manifest_version": 3,
+    "name": "Screenshata",
+    "version": "1.0",
+    "description": "Take screenshots of web pages",
+    "permissions": [
+        "activeTab",
+        "downloads"
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "icons": {
+        "48": "camera.png"
+    }
+}
