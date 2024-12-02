@@ -4,21 +4,75 @@
 <head>
     <style>
         body {
-            width: 200px;
-            padding: 10px;
+            width: 300px;
+            padding: 15px;
+            font-family: Arial, sans-serif;
+        }
+
+        .button-container {
+            display: grid;
+            gap: 10px;
         }
 
         button {
             width: 100%;
-            padding: 8px;
-            margin: 5px 0;
+            padding: 10px;
             cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #editor {
+            display: none;
+            margin-top: 10px;
+        }
+
+        canvas {
+            max-width: 100%;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .tools {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+            margin-top: 10px;
+        }
+
+        .color-picker {
+            margin: 10px 0;
         }
     </style>
 </head>
 
 <body>
-    <button id="captureBtn">Take Screenshot</button>
+    <div class="button-container">
+        <button id="captureVisible">Capture Visible Area</button>
+        <button id="captureFullPage">Capture Full Page</button>
+        <button id="captureRegion">Capture Selected Region</button>
+    </div>
+
+    <div id="editor">
+        <canvas id="canvas"></canvas>
+        <div class="tools">
+            <button id="draw">Draw</button>
+            <button id="text">Add Text</button>
+            <button id="crop">Crop</button>
+        </div>
+        <div class="color-picker">
+            <label for="color">Color:</label>
+            <input type="color" id="color" value="#ff0000">
+        </div>
+        <button id="save">Save Screenshot</button>
+    </div>
     <script src="popup.js"></script>
 </body>
 
